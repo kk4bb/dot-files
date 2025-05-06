@@ -1,0 +1,1 @@
+This repo will serve as a backup for all my scripts and config files in case I decide to re-write my whole nvim config and I bork everything badly, feel free to use any of this too, I am trying to add more comments but most of this stuff is self explanatory till now
