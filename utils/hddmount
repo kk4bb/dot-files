@@ -5,6 +5,7 @@
 ### not working, read isn't working properly yet
 ### while loop needs to be done better to account for more than one drive to be mounted (making the program interactive)
 ### we now need to specify the exact name of the device like sdb2 or whatever but I'd like to type anything specific to that line and in case of more than one line returned to prompt the user to select which one
+### the echo in the end works wether the mount was successful or not
 
 lsblk | tee tempDevices.txt
 input="sdb2"

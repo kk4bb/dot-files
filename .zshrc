@@ -81,13 +81,6 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
-
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
 
@@ -104,15 +97,35 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # fucking around
-
-alias ls='ls -l --color=auto'
-alias grep='grep --color=auto'
-
+# IMPORTANT: make sure not to include any spaces before or after the equal, mistakes have been made
 PS1="[%n %~] 🗿 "
 
 ## you must change your path to include the utils folder wherever you place it to be able to access any of the scripts inside it from anywhere on the system, replace "kab" with whatever your username is and don't forget to add the ":$PATH" in the end so that the default path variable is appended
 
-export PATH="/home/kab/utils:$PATH"
+export MANPAGER="nvim +Man!"
+export EDITOR="nvim"
+export LSPs="/home/kab/.local/share/nvim/mason/bin/"
+export PATH="/home/kab/utils:$HOME/go/bin:$PATH:$LSPs"
 
-export soc="/home/kab/Learn/cybersec/htb/academy/SOC"
+export sec="/home/kab/hdd/Learn/cybersec"
 export CHROME_EXECUTABLE="/usr/bin/chromium"
+
+alias ls="ls -lh --color=auto"
+alias grep="grep --color=auto"
+alias update-discord="yay -S discord-ptb goofcord --noconfirm"
+alias awesomeconf="cd /home/kab/.config/awesome/ && nvim rc.lua"
+alias wezconf="cd /home/kab/.config/wezterm/ && nvim wezterm.lua"
+alias nvimconf="cd /home/kab/.config/nvim/ && nvim init.lua"
+alias todo="nvim /home/kab/to-do.md"
+
+# this is to highlight whatever you specify but return the output as is, to be used with stuff like tcpdump where you're looking for a three-way hanshake for example
+## I am using the second command line argument as this would usually be used after the pipe operator which would represent the first argument
+alias ngrep="grep -E \"\$2\|\$\""
+
+## make a command that opens dolphin in the current terminal directory and then allow the user output again
+#alias there="nohup dolphin . > /dev/null 2>&1 && disown"
+
+alias there="kde-open5 ."
+
+## fix the formatting issues with this
+

@@ -1,0 +1,1 @@
+I need to figure out how to use the account details from warp-cli with wgcf to make my life easier
